@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>조영주 | Backend & Infrastructure Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- FontAwesome 아이콘 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- 헤더 & 네비게이션 -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">Youngjoo<span>.dev</span></a>
+      <nav class="nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1 class="hero-title">안녕하세요, 엔지니어 <span>조영주</span>입니다.</h1>
+      <p class="hero-subtitle">
+        안정적인 서버 인프라 구축과 효율적인 백엔드·데이터베이스 설계를 지향합니다.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary-btn">프로젝트 보기</a>
+        <a href="https://github.com/Choyoungjoo123" target="_blank" class="btn secondary-btn">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me (이력 & 소개) -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3><i class="fas fa-user-graduate"></i> Profile</h3>
+          <p>백엔드 API 개발부터 Linux 기반 서버 환경 구성, 컨테이너화까지 시스템 전반의 유기적인 동작 흐름을 이해하고 해결하는 것에 즐거움을 느낍니다.</p>
+        </div>
+        <div class="about-card">
+          <h3><i class="fas fa-bullseye"></i> Engineering Focus</h3>
+          <p>· Linux 시스템 관리 및 Nginx/Apache 서버 세팅<br>
+             · MariaDB / MongoDB를 활용한 스키마 설계 및 데이터 파이프라인 구축<br>
+             · Docker 컨테이너화를 통한 서비스 격리 및 배포 최적화</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills (스킬셋) -->
+  <section id="skills" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Skill Set</h2>
+      <div class="skills-grid">
+        
+        <div class="skill-category">
+          <h3><i class="fas fa-server"></i> Linux & Infrastructure</h3>
+          <ul class="skill-tags">
+            <li>Linux (RHEL / Ubuntu)</li>
+            <li>Shell Scripting</li>
+            <li>Nginx</li>
+            <li>Docker</li>
+            <li>Network & DNS</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Backend & API</h3>
+          <ul class="skill-tags">
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>RESTful API</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-database"></i> Database</h3>
+          <ul class="skill-tags">
+            <li>MariaDB (SQL)</li>
+            <li>MongoDB (NoSQL)</li>
+            <li>Data Modeling</li>
+            <li>Query Optimization</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-laptop-code"></i> Frontend & Tools</h3>
+          <ul class="skill-tags">
+            <li>React</li>
+            <li>Git / GitHub</li>
+            <li>GitHub Actions</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects (진행 프로젝트) -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <!-- 프로젝트 1 -->
+        <div class="project-card">
+          <div class="project-info">
+            <span class="project-tag">Web & Infrastructure</span>
+            <h3>입지 분석 및 아파트 추천 플랫폼 (DZTeam4)</h3>
+            <p>
+              지도 기반 아파트 추천 및 지역 인프라 희소성 분석 플랫폼입니다. 카카오 맵 API 연동, 시세 그래프 제공 및 서비스 컨테이너 환경 배포를 담당했습니다.
+            </p>
+            <div class="tech-stack">
+              <span>React</span>
+              <span>FastAPI</span>
+              <span>MariaDB</span>
+              <span>Docker</span>
+              <span>Kakao Map API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 프로젝트 2 -->
+        <div class="project-card">
+          <div class="project-info">
+            <span class="project-tag">Data Pipeline & DB</span>
+            <h3>TMDB 기반 영화 데이터베이스 및 파이프라인 구축</h3>
+            <p>
+              외부 TMDB API를 연동하여 대용량 영화 메타데이터를 수집하고, MariaDB와 MongoDB 구조에 맞게 이관·최적화한 파이프라인 프로젝트입니다.
+            </p>
+            <div class="tech-stack">
+              <span>Python</span>
+              <span>MariaDB</span>
+              <span>MongoDB</span>
+              <span>REST API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 프로젝트 3 -->
+        <div class="project-card">
+          <div class="project-info">
+            <span class="project-tag">Database Architecture</span>
+            <h3>커피 원두 및 감성 프로파일링 데이터베이스 설계</h3>
+            <p>
+              원두 산지, 로스팅 단계, 산미/바디감 등 감각적 지표를 구조화하고 유기적으로 조회할 수 있는 전용 SQL 스키마 및 쿼리 최적화 작업입니다.
+            </p>
+            <div class="tech-stack">
+              <span>MariaDB</span>
+              <span>SQL Optimization</span>
+              <span>Data Modeling</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact (연락처) -->
+  <section id="contact" class="section bg-light">
+    <div class="container text-center">
+      <h2 class="section-title">Contact</h2>
+      <p>새로운 기회와 기술적인 대화는 언제나 환영합니다.</p>
+      <div class="contact-links">
+        <a href="https://github.com/Choyoungjoo123" target="_blank" class="contact-item">
+          <i class="fab fa-github"></i> GitHub Profile
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Choyoungjoo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
