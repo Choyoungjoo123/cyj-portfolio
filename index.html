@@ -41,77 +41,168 @@
     </div>
   </section>
 
-  <!-- About Me (이력 & 소개) -->
+  <!-- About Me (이력 및 소개) -->
   <section id="about" class="section">
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="about-grid">
+        
+        <!-- 프로필 및 이력 -->
         <div class="about-card">
-  <h3><i class="fas fa-user-graduate"></i> Profile</h3>
-  <div class="profile-content-wrapper">
-    <!-- 프로필 증명사진 -->
-    <img src="images/2026_기업용_조영주.jpg" alt="조영주 프로필 사진" class="profile-img">
-    
-    <!-- 자기소개 텍스트 -->
-    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-  <li>• 2023.02 ~ 2025.03: 한경국립대학교 컴퓨터공학과 졸업</li>
-  <li>• 2019.02 ~ 2021.03: 한국폴리텍대학 정보통신학과 졸업</li>
-  <li>• 2014.02 ~ 2017.03: 배재고등학교 졸업</li>
-</ul>
-  </div>
-</div>
-        <div class="about-card">
-          <h3><i class="fas fa-bullseye"></i> Engineering Focus</h3>
-          <p>· Linux 시스템 관리 및 Nginx/Apache 서버 세팅<br>
-             · MariaDB / MongoDB를 활용한 스키마 설계 및 데이터 파이프라인 구축<br>
-             · Docker 컨테이너화를 통한 서비스 격리 및 배포 최적화</p>
+          <h3><i class="fas fa-id-card"></i> Profile & History</h3>
+          <div class="profile-content-wrapper" style="display: flex; gap: 20px; align-items: flex-start;">
+            <!-- 프로필 증명사진 -->
+            <img src="images/2026_기업용_조영주.jpg" alt="조영주 프로필 사진" class="profile-img" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid #cbd5e1; flex-shrink: 0;">
+            
+            <div class="history-details" style="display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem; width: 100%;">
+              
+              <!-- 학력 -->
+              <div>
+                <strong style="color: #2563eb; display: block; margin-bottom: 4px;"><i class="fas fa-graduation-cap"></i> 학력</strong>
+                <ul style="list-style: none; padding-left: 0; margin: 0; line-height: 1.6;">
+                  <li>• 한경국립대학교 컴퓨터공학과 졸업 <span style="color: #64748b; font-size: 0.8rem;">[2023.03~2025.02]</span></li>
+                  <li>• 한국폴리텍대학 정보통신학과 졸업 <span style="color: #64748b; font-size: 0.8rem;">[2019.03~2021.02]</span></li>
+                  <li>• 배재고등학교 졸업 <span style="color: #64748b; font-size: 0.8rem;">[2014.03~2017.02]</span></li>
+                </ul>
+              </div>
+
+              <!-- 경력 -->
+              <div>
+                <strong style="color: #2563eb; display: block; margin-bottom: 4px;"><i class="fas fa-briefcase"></i> 경력</strong>
+                <ul style="list-style: none; padding-left: 0; margin: 0; line-height: 1.6;">
+                  <li>• 에이프리카(AIFRICA) 시스템엔지니어 <span style="color: #64748b; font-size: 0.8rem;">[2029.09~진행중]</span></li>
+                  <li>• 공군 전산특기병 국군지휘통신사령부 네트워크지원병 복무 <span style="color: #64748b; font-size: 0.8rem;">[2021.04~2023.01]</span></li>
+                </ul>
+              </div>
+
+              <!-- 교육 -->
+              <div>
+                <strong style="color: #2563eb; display: block; margin-bottom: 4px;"><i class="fas fa-laptop-code"></i> 교육</strong>
+                <ul style="list-style: none; padding-left: 0; margin: 0; line-height: 1.6;">
+                  <li>• Douzone Cloud DX Academy 6기 <span style="color: #64748b; font-size: 0.8rem;">[2026.02~2026.08]</span></li>
+                  <li>• Amazon AWS (공인) Architecting on AWS <span style="color: #64748b; font-size: 0.8rem;">[2026.06~2026.06]</span></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
         </div>
+
+        <!-- 엔지니어링 포커스 / 자격증 / 수상내역 -->
+        <div class="about-card" style="display: flex; flex-direction: column; gap: 20px;">
+          
+          <!-- Engineering Focus -->
+          <div>
+            <h3><i class="fas fa-bullseye"></i> Engineering Focus</h3>
+            <p style="line-height: 1.7; color: #334155; font-size: 0.92rem;">
+              · 리눅스 시스템 구축 및 관리 능력<br>
+              · 네트워크 인프라 및 보안 구축 능력<br>
+              · 애플리케이션 및 데이터베이스 관리 능력<br>
+              · 가상화 및 컨테이너 관리 능력<br>
+              · 자동화 및 CI/CD 파이프라인 구축 능력<br>
+              · 클라우드 인프라 설계 및 관리 / 하이브리드 클라우드 구축 및 관리
+            </p>
+          </div>
+
+          <!-- 자격 및 면허 -->
+          <div>
+            <h4 style="font-size: 1rem; color: #1e293b; margin-bottom: 8px;"><i class="fas fa-certificate"></i> 자격 및 면허</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <span class="skill-tag" style="background: #f1f5f9; padding: 4px 10px; border-radius: 12px; font-size: 0.82rem; font-weight: 500;">RHCSA</span>
+              <span class="skill-tag" style="background: #f1f5f9; padding: 4px 10px; border-radius: 12px; font-size: 0.82rem; font-weight: 500;">정보처리기사</span>
+              <span class="skill-tag" style="background: #f1f5f9; padding: 4px 10px; border-radius: 12px; font-size: 0.82rem; font-weight: 500;">정보처리산업기사</span>
+              <span class="skill-tag" style="background: #f1f5f9; padding: 4px 10px; border-radius: 12px; font-size: 0.82rem; font-weight: 500;">리눅스마스터 2급</span>
+              <span class="skill-tag" style="background: #f1f5f9; padding: 4px 10px; border-radius: 12px; font-size: 0.82rem; font-weight: 500;">네트워크 관리사 2급</span>
+              <span class="skill-tag" style="background: #f1f5f9; padding: 4px 10px; border-radius: 12px; font-size: 0.82rem; font-weight: 500;">운전면허증 2종보통</span>
+            </div>
+          </div>
+
+          <!-- 수상 내역 -->
+          <div>
+            <h4 style="font-size: 1rem; color: #1e293b; margin-bottom: 8px;"><i class="fas fa-award"></i> 수상 내역</h4>
+            <ul style="list-style: none; padding-left: 0; margin: 0; font-size: 0.88rem; line-height: 1.6; color: #334155;">
+              <li>• 더존 클라우드 DX 아카데미 장려상 <span style="color: #64748b; font-size: 0.8rem;">[2026.08]</span></li>
+              <li>• 대한민국청소년발명경진대회 금상 <span style="color: #64748b; font-size: 0.8rem;">[2020.10]</span></li>
+              <li>• 충남 창업경진대회 Final 8인 진출 <span style="color: #64748b; font-size: 0.8rem;">[2020.08]</span></li>
+            </ul>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Skills (스킬셋) -->
+  <!-- Skills (스킬셋 - 요청하신 태그 스타일 적용) -->
   <section id="skills" class="section bg-light">
     <div class="container">
       <h2 class="section-title">Skill Set</h2>
       <div class="skills-grid">
         
+        <!-- OS & Infrastructure -->
         <div class="skill-category">
-          <h3><i class="fas fa-server"></i> Linux & Infrastructure</h3>
+          <h3><i class="fas fa-server"></i> OS & Cloud</h3>
           <ul class="skill-tags">
-            <li>Linux (RHEL / Ubuntu)</li>
-            <li>Shell Scripting</li>
-            <li>Nginx</li>
-            <li>Docker</li>
-            <li>Network & DNS</li>
+            <li>Rocky Linux 10.1 (VM)</li>
+            <li>Ubuntu 24.04</li>
+            <li>AWS</li>
           </ul>
         </div>
 
+        <!-- Programming & Database -->
         <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Backend & API</h3>
+          <h3><i class="fas fa-database"></i> Language & DB</h3>
           <ul class="skill-tags">
+            <li>Java</li>
             <li>Python</li>
-            <li>FastAPI</li>
-            <li>RESTful API</li>
+            <li>MariaDB</li>
+            <li>MongoDB</li>
+            <li>Elasticsearch</li>
+            <li>PostgreSQL</li>
+            <li>Redis</li>
+            <li>Kafka</li>
           </ul>
         </div>
 
+        <!-- Orchestration & Container -->
         <div class="skill-category">
-          <h3><i class="fas fa-database"></i> Database</h3>
+          <h3><i class="fas fa-cubes"></i> Container & Mesh</h3>
           <ul class="skill-tags">
-            <li>MariaDB (SQL)</li>
-            <li>MongoDB (NoSQL)</li>
-            <li>Data Modeling</li>
-            <li>Query Optimization</li>
+            <li>Kubernetes (K8s)</li>
+            <li>Istio (Service Mesh)</li>
+            <li>Cilium (CNI)</li>
+            <li>Gateway API</li>
           </ul>
         </div>
 
+        <!-- CI/CD & Repository -->
         <div class="skill-category">
-          <h3><i class="fas fa-laptop-code"></i> Frontend & Tools</h3>
+          <h3><i class="fas fa-code-branch"></i> CI/CD & Registry</h3>
           <ul class="skill-tags">
-            <li>React</li>
-            <li>Git / GitHub</li>
             <li>GitHub Actions</li>
+            <li>Argo CD</li>
+            <li>SonarQube</li>
+            <li>Trivy</li>
+            <li>GitLab / GitHub</li>
+            <li>Nexus</li>
+            <li>Harbor</li>
+            <li>Docker Hub</li>
+          </ul>
+        </div>
+
+        <!-- Monitoring & Test -->
+        <div class="skill-category" style="grid-column: span 2;">
+          <h3><i class="fas fa-chart-line"></i> Monitoring & Observability</h3>
+          <ul class="skill-tags">
+            <li>Prometheus</li>
+            <li>Grafana</li>
+            <li>Loki</li>
+            <li>Tempo</li>
+            <li>OpenTelemetry</li>
+            <li>Alertmanager</li>
+            <li>Alloy (알로이)</li>
+            <li>Chaos Engineering</li>
+            <li>K6</li>
           </ul>
         </div>
 
@@ -185,9 +276,15 @@
     <div class="container text-center">
       <h2 class="section-title">Contact</h2>
       <p>새로운 기회와 기술적인 대화는 언제나 환영합니다.</p>
-      <div class="contact-links">
-        <a href="https://github.com/Choyoungjoo123" target="_blank" class="contact-item">
-          <i class="fab fa-github"></i> GitHub Profile
+      <div class="contact-links" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+        <a href="tel:01040395063" class="contact-item" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #1e293b; font-weight: 600;">
+          <i class="fas fa-phone-alt" style="color: #2563eb;"></i> 010-4039-5063
+        </a>
+        <a href="mailto:youngjoo5063@naver.com" class="contact-item" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #1e293b; font-weight: 600;">
+          <i class="fas fa-envelope" style="color: #2563eb;"></i> youngjoo5063@naver.com
+        </a>
+        <a href="https://github.com/Choyoungjoo123" target="_blank" class="contact-item" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #1e293b; font-weight: 600;">
+          <i class="fab fa-github" style="color: #2563eb;"></i> GitHub Profile
         </a>
       </div>
     </div>
