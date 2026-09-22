@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>가성비 주거지 추천 서비스 - 프로젝트 상세</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .detail-header {
+      padding: 120px 0 40px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .meta-info {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #64748b;
+      margin-top: 15px;
+      font-size: 0.95rem;
+    }
+    .detail-body {
+      padding: 60px 0;
+    }
+    .content-block {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .content-block h3 {
+      font-size: 1.25rem;
+      color: #0f172a;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .content-block h3 i {
+      color: #2563eb;
+    }
+    .diagram-img {
+      width: 100%;
+      max-width: 850px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .tech-badge {
+      display: inline-block;
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">Youngjoo<span>.dev</span></a>
+      <nav class="nav">
+        <ul>
+          <li><a href="../index.html#projects"><i class="fas fa-arrow-left"></i> 목록으로 돌아가기</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 상세 타이틀 섹션 -->
+  <section class="detail-header">
+    <div class="container">
+      <span class="project-tag">Back-End & Analytics</span>
+      <h1 style="font-size: 2.2rem; color: #0f172a; margin-top: 5px;">아파트 실거래가 분석 기반 가성비 주거지 추천 서비스 (DZTeam4)</h1>
+      <div class="meta-info">
+        <span><i class="fas fa-users"></i> 팀 프로젝트 (3명)</span>
+        <span><i class="fas fa-user-tag"></i> 역할: 팀장 및 Back-End 담당</span>
+        <span><i class="fas fa-calendar-alt"></i> 2026.04.14 ~ 2026.04.24 (10일)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 본문 내용 -->
+  <section class="detail-body">
+    <div class="container">
+
+      <!-- 기술 스택 -->
+      <div class="content-block">
+        <h3><i class="fas fa-tools"></i> 사용 기술 및 환경 (Tech Stack)</h3>
+        <div>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">MariaDB</span>
+          <span class="tech-badge">MongoDB</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Nginx</span>
+          <span class="tech-badge">Open API</span>
+        </div>
+      </div>
+
+      <!-- 아키텍처 다이어그램 -->
+      <div class="content-block">
+        <h3><i class="fas fa-sitemap"></i> 시스템 아키텍처 및 서비스 흐름도</h3>
+        <p style="color: #475569; line-height: 1.7;">
+          공공데이터 수집부터 저장 최적화, ARIMA 기반 시세 예측 분석, FastAPI API 엔드포인트를 거쳐 React 프론트엔드로 전달되는 전체 파이프라인 구조입니다.
+        </p>
+        <img src="../images/apt_drowio.png" alt="아파트 추천 서비스 아키텍처 다이어그램" class="diagram-img">
+      </div>
+
+      <!-- 주요 담당 업무 및 기술적 성과 -->
+      <div class="content-block">
+        <h3><i class="fas fa-check-circle"></i> 주요 담당 업무 및 기술적 성과</h3>
+        <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #334155;">
+          <li style="margin-bottom: 12px;">
+            <strong>• 대용량 데이터 수집 및 DB 최적화 (약 191만 건):</strong><br>
+            공공데이터포털 실거래가 데이터 191만 건을 수집한 후, 캐싱 메모리(Redis) 추가 설치 대신 DB 인덱싱 체계와 스키마 구조 개선만으로 높은 조회 최적화 달성
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong>• 인프라 분석 및 ARIMA 예측 모델 기반 가성비 추천 알고리즘:</strong><br>
+            강남구 등 주요 고가 지역의 인프라 희소성 지표를 기준점으로 산정하고, 분석 라이브러리와 ARIMA 시계열 예측값을 결합해 가격 대비 높은 인프라 만족도를 갖춘 지역(구 단위) 추천 로직 설계
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong>• End-to-End 데이터 분석 파이프라인 설계:</strong><br>
+            [데이터 수집 → 저장 및 구조 최적화 → 분석 및 학습 → FastAPI 웹 서비스 제공]으로 이어지는 전체 백엔드 데이터 흐름 구축
+          </li>
+        </ul>
+      </div>
+
+      <!-- 하단 뒤로가기 버튼 -->
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="../index.html#projects" class="btn primary-btn"><i class="fas fa-th-list"></i> 전체 프로젝트 목록보기</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Choyoungjoo. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

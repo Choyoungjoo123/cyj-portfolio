@@ -210,7 +210,7 @@
     </div>
   </section>
 
-  <!-- Projects (진행 프로젝트) -->
+<!-- Projects (프로젝트 목록) -->
   <section id="projects" class="section">
     <div class="container">
       <h2 class="section-title">Projects</h2>
@@ -219,51 +219,128 @@
         <!-- 프로젝트 1 -->
         <div class="project-card">
           <div class="project-info">
-            <span class="project-tag">Web & Infrastructure</span>
-            <h3>입지 분석 및 아파트 추천 플랫폼 (DZTeam4)</h3>
-            <p>
-              지도 기반 아파트 추천 및 지역 인프라 희소성 분석 플랫폼입니다. 카카오 맵 API 연동, 시세 그래프 제공 및 서비스 컨테이너 환경 배포를 담당했습니다.
+            <span class="project-tag">Network & Infra (팀 3명)</span>
+            <h3>DNS & SMTP 기반 메일 서버 인프라 구축</h3>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 8px;">
+              <i class="fas fa-user-tag"></i> 팀장 / DNS, 메일 서버 및 리버스 프록시 구축<br>
+              <i class="fas fa-calendar-alt"></i> 2026.03.01 ~ 2026.03.25 (26일)
             </p>
-            <div class="tech-stack">
-              <span>React</span>
-              <span>FastAPI</span>
+            <p>
+              BIND 기반 DNS와 Postfix/Dovecot, Roundcube 연동 내부망 메일 시스템 구축 및 Nginx 리버스 프록시를 통한 SSL/TLS 보안 아키텍처 설계
+            </p>
+            <div class="tech-stack" style="margin-bottom: 15px;">
+              <span>Rocky Linux</span>
+              <span>Bind</span>
+              <span>Postfix</span>
+              <span>Dovecot</span>
+              <span>Nginx</span>
               <span>MariaDB</span>
-              <span>Docker</span>
-              <span>Kakao Map API</span>
             </div>
+            <a href="projects/project1.html" class="btn secondary-btn" style="width: 100%; text-align: center; display: block; font-size: 0.9rem;">
+              자세히 보기 <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
 
         <!-- 프로젝트 2 -->
         <div class="project-card">
           <div class="project-info">
-            <span class="project-tag">Data Pipeline & DB</span>
-            <h3>TMDB 기반 영화 데이터베이스 및 파이프라인 구축</h3>
-            <p>
-              외부 TMDB API를 연동하여 대용량 영화 메타데이터를 수집하고, MariaDB와 MongoDB 구조에 맞게 이관·최적화한 파이프라인 프로젝트입니다.
+            <span class="project-tag">Data Architecture (팀 3명)</span>
+            <h3>TMDB API 기반 영화 데이터 분석 파이프라인</h3>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 8px;">
+              <i class="fas fa-user-tag"></i> Data Architect (DA) / 다중 DB 설계 및 파이프라인 구축<br>
+              <i class="fas fa-calendar-alt"></i> 2026.03.26 ~ 2026.04.13 (19일)
             </p>
-            <div class="tech-stack">
-              <span>Python</span>
-              <span>MariaDB</span>
+            <p>
+              TMDB API 수집 데이터를 특성에 맞춰 RDBMS와 NoSQL로 수집·분류하고 적재 효율성을 극대화하기 위한 SQL 쿼리 최적화 및 인덱싱 적용
+            </p>
+            <div class="tech-stack" style="margin-bottom: 15px;">
+              <span>MySQL</span>
               <span>MongoDB</span>
+              <span>Python</span>
+              <span>Rocky Linux</span>
               <span>REST API</span>
             </div>
+            <a href="projects/project2.html" class="btn secondary-btn" style="width: 100%; text-align: center; display: block; font-size: 0.9rem;">
+              자세히 보기 <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
 
         <!-- 프로젝트 3 -->
         <div class="project-card">
           <div class="project-info">
-            <span class="project-tag">Database Architecture</span>
-            <h3>커피 원두 및 감성 프로파일링 데이터베이스 설계</h3>
-            <p>
-              원두 산지, 로스팅 단계, 산미/바디감 등 감각적 지표를 구조화하고 유기적으로 조회할 수 있는 전용 SQL 스키마 및 쿼리 최적화 작업입니다.
+            <span class="project-tag">Back-End & Analytics (팀 3명)</span>
+            <h3>아파트 실거래가 기반 가성비 주거지 추천 서비스</h3>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 8px;">
+              <i class="fas fa-user-tag"></i> 팀장 및 Back-End 담당<br>
+              <i class="fas fa-calendar-alt"></i> 2026.04.14 ~ 2026.04.24 (10일)
             </p>
-            <div class="tech-stack">
+            <p>
+              공공데이터 191만 건 수집·최적화, ARIMA 시계열 예측과 지역 인프라 지표를 결합한 가성비 주거지 추천 로직 및 파이프라인 개발
+            </p>
+            <div class="tech-stack" style="margin-bottom: 15px;">
+              <span>Python</span>
+              <span>FastAPI</span>
               <span>MariaDB</span>
-              <span>SQL Optimization</span>
-              <span>Data Modeling</span>
+              <span>MongoDB</span>
+              <span>React</span>
+              <span>Nginx</span>
             </div>
+            <a href="projects/project3.html" class="btn secondary-btn" style="width: 100%; text-align: center; display: block; font-size: 0.9rem;">
+              자세히 보기 <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 프로젝트 4 -->
+        <div class="project-card">
+          <div class="project-info">
+            <span class="project-tag">Container & Swarm (팀 4명)</span>
+            <h3>아파트 분석 서비스 Docker Swarm 이전 프로젝트</h3>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 8px;">
+              <i class="fas fa-user-tag"></i> 팀장 / 3-Tier 컨테이너 환경 및 ES/Kibana 이관<br>
+              <i class="fas fa-calendar-alt"></i> 프로젝트 진행 기간
+            </p>
+            <p>
+              VMware 환경의 서비스를 Swarm 클러스터로 전환, Elasticsearch 190만 건 검색 성능 최적화 및 Kibana 대시보드 시각화 구축
+            </p>
+            <div class="tech-stack" style="margin-bottom: 15px;">
+              <span>Docker Swarm</span>
+              <span>Elasticsearch</span>
+              <span>Kibana</span>
+              <span>Harbor</span>
+              <span>Ubuntu</span>
+            </div>
+            <a href="projects/project4.html" class="btn secondary-btn" style="width: 100%; text-align: center; display: block; font-size: 0.9rem;">
+              자세히 보기 <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 프로젝트 5 -->
+        <div class="project-card">
+          <div class="project-info">
+            <span class="project-tag">K8s & CI/CD & Mesh (팀 3명)</span>
+            <h3>HA 멀티 마스터 K8s 클러스터 및 신차 판매 웹</h3>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 8px;">
+              <i class="fas fa-user-tag"></i> 부팀장 / K8s 인프라, CI/CD, 부하테스트<br>
+              <i class="fas fa-calendar-alt"></i> 프로젝트 진행 기간
+            </p>
+            <p>
+              Ansible 자동화 클러스터 구축, GitHub Actions/ArgoCD/Trivy/SonarQube CI/CD 구성, Chaos Mesh 및 Linkerd 모니터링 검증
+            </p>
+            <div class="tech-stack" style="margin-bottom: 15px;">
+              <span>Kubernetes</span>
+              <span>Ansible</span>
+              <span>ArgoCD</span>
+              <span>SonarQube</span>
+              <span>Linkerd</span>
+              <span>Chaos Mesh</span>
+            </div>
+            <a href="projects/project5.html" class="btn secondary-btn" style="width: 100%; text-align: center; display: block; font-size: 0.9rem;">
+              자세히 보기 <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
 

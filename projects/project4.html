@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docker Swarm 환경 서비스 이전 - 프로젝트 상세</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .detail-header {
+      padding: 120px 0 40px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .meta-info {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #64748b;
+      margin-top: 15px;
+      font-size: 0.95rem;
+    }
+    .detail-body {
+      padding: 60px 0;
+    }
+    .content-block {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .content-block h3 {
+      font-size: 1.25rem;
+      color: #0f172a;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .content-block h3 i {
+      color: #2563eb;
+    }
+    .diagram-img {
+      width: 100%;
+      max-width: 850px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .tech-badge {
+      display: inline-block;
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">Youngjoo<span>.dev</span></a>
+      <nav class="nav">
+        <ul>
+          <li><a href="../index.html#projects"><i class="fas fa-arrow-left"></i> 목록으로 돌아가기</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 상세 타이틀 섹션 -->
+  <section class="detail-header">
+    <div class="container">
+      <span class="project-tag">Container & Orchestration</span>
+      <h1 style="font-size: 2.2rem; color: #0f172a; margin-top: 5px;">아파트 분석 서비스 Docker Swarm 컨테이너 환경 이전</h1>
+      <div class="meta-info">
+        <span><i class="fas fa-users"></i> 팀 프로젝트 (4명)</span>
+        <span><i class="fas fa-user-tag"></i> 역할: 팀장 / 3-Tier 컨테이너 이전 및 ES/Kibana 구축</span>
+        <span><i class="fas fa-calendar-alt"></i> 프로젝트 완료</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 본문 내용 -->
+  <section class="detail-body">
+    <div class="container">
+
+      <!-- 기술 스택 -->
+      <div class="content-block">
+        <h3><i class="fas fa-tools"></i> 사용 기술 및 환경 (Tech Stack)</h3>
+        <div>
+          <span class="tech-badge">Ubuntu 24.04.4</span>
+          <span class="tech-badge">Docker / Docker Swarm</span>
+          <span class="tech-badge">Elasticsearch</span>
+          <span class="tech-badge">Kibana</span>
+          <span class="tech-badge">Harbor</span>
+          <span class="tech-badge">Kafka</span>
+          <span class="tech-badge">Monitoring</span>
+        </div>
+      </div>
+
+      <!-- 시스템 아키텍처 다이어그램 -->
+      <div class="content-block">
+        <h3><i class="fas fa-sitemap"></i> Swarm 클러스터 아키텍처</h3>
+        <p style="color: #475569; line-height: 1.7;">
+          기존 VMware 기반 서버에서 Master 1대, Worker 2대, Registry(Harbor) 구조의 Docker Swarm 클러스터 환경으로 서비스 전환을 완료한 구성도입니다.
+        </p>
+        <img src="../images/docker_drowio.png" alt="Docker Swarm 아키텍처 다이어그램" class="diagram-img">
+      </div>
+
+      <!-- 주요 담당 업무 및 기술적 성과 -->
+      <div class="content-block">
+        <h3><i class="fas fa-check-circle"></i> 주요 담당 업무 및 기술적 성과</h3>
+        <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #334155;">
+          <li style="margin-bottom: 12px;">
+            <strong>• 3-Tier 서비스 컨테이너화 및 Swarm 전환:</strong><br>
+            VMware 가상머신 환경의 레거시 구조를 Frontend, Backend, DB가 분리된 3-Tier 구조의 컨테이너 서비스로 재설계 및 Swarm 클러스터로 모던화
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong>• Docker Swarm 클러스터 구축 및 프라이빗 레지스트리 운용:</strong><br>
+            Master 1노드, Worker 2노드로 구성된 Swarm 오케스트레이션 환경을 구축하고, Harbor 프라이빗 레지스트리를 연동하여 안전한 컨테이너 이미지 버전 관리 수행
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong>• Elasticsearch 기반 검색 성능 최적화 및 시각화:</strong><br>
+            약 190만 건의 주거 데이터를 Elasticsearch로 인덱싱하여 검색 처리 속도를 대폭 단축하고, Kibana 모니터링 대시보드를 구축하여 실시간 시각화 제공
+          </li>
+        </ul>
+      </div>
+
+      <!-- 하단 뒤로가기 버튼 -->
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="../index.html#projects" class="btn primary-btn"><i class="fas fa-th-list"></i> 전체 프로젝트 목록보기</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Choyoungjoo. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

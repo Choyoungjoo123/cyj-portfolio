@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DNS & SMTP 구성 - 프로젝트 상세</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* 상세 페이지 전용 추가 스타일 */
+    .detail-header {
+      padding: 120px 0 40px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .meta-info {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #64748b;
+      margin-top: 15px;
+      font-size: 0.95rem;
+    }
+    .detail-body {
+      padding: 60px 0;
+    }
+    .content-block {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .content-block h3 {
+      font-size: 1.25rem;
+      color: #0f172a;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .content-block h3 i {
+      color: #2563eb;
+    }
+    .diagram-img {
+      width: 100%;
+      max-width: 850px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .tech-badge {
+      display: inline-block;
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">Youngjoo<span>.dev</span></a>
+      <nav class="nav">
+        <ul>
+          <li><a href="../index.html#projects"><i class="fas fa-arrow-left"></i> 목록으로 돌아가기</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 상세 타이틀 섹션 -->
+  <section class="detail-header">
+    <div class="container">
+      <span class="project-tag">Network & Infra System</span>
+      <h1 style="font-size: 2.2rem; color: #0f172a; margin-top: 5px;">DNS & SMTP 메일 서버 통합 인프라 구축</h1>
+      <div class="meta-info">
+        <span><i class="fas fa-users"></i> 팀 프로젝트 (3명)</span>
+        <span><i class="fas fa-user-tag"></i> 역할: 팀장 및 DNS/SMTP 인프라 총괄</span>
+        <span><i class="fas fa-calendar-alt"></i> 2026.03.01 ~ 2026.03.25 (26일)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 본문 내용 -->
+  <section class="detail-body">
+    <div class="container">
+
+      <!-- 기술 스택 -->
+      <div class="content-block">
+        <h3><i class="fas fa-tools"></i> 사용 기술 및 환경 (Tech Stack)</h3>
+        <div>
+          <span class="tech-badge">Rocky Linux 10.1</span>
+          <span class="tech-badge">BIND (DNS)</span>
+          <span class="tech-badge">Postfix</span>
+          <span class="tech-badge">Dovecot</span>
+          <span class="tech-badge">Nginx</span>
+          <span class="tech-badge">Apache2</span>
+          <span class="tech-badge">PHP</span>
+          <span class="tech-badge">MariaDB</span>
+          <span class="tech-badge">Slack</span>
+        </div>
+      </div>
+
+      <!-- 시스템 아키텍처 및 이미지 -->
+      <div class="content-block">
+        <h3><i class="fas fa-sitemap"></i> 시스템 아키텍처 (Architecture Diagram)</h3>
+        <p style="color: #475569; line-height: 1.7;">
+          내부망 메일 인프라 보안 강화를 위해 Nginx 리버스 프록시를 전면에 배치하였으며, BIND DNS 기반 이름 해석 및 SSL/TLS 보안 환경을 구성했습니다.
+        </p>
+        <!-- 이미지가 들어가는 위치 -->
+        <img src="../images/DNS_SMTP_drowio.png" alt="DNS & SMTP 아키텍처 다이어그램" class="diagram-img">
+      </div>
+
+      <!-- 주요 성과 및 담당 업무 상세 -->
+      <div class="content-block">
+        <h3><i class="fas fa-check-circle"></i> 주요 담당 업무 및 기술적 성과</h3>
+        <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #334155;">
+          <li style="margin-bottom: 12px;">
+            <strong>• BIND 기반 통합 DNS 및 메일 시스템 연동:</strong><br>
+            내부 망에서 사용하는 도메인 체계를 BIND로 자체 구성하고, Postfix(MTA) 및 Dovecot(MDA)을 연동하여 안정적인 메일 송수신 체계 구현
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong>• DB 연동 웹메일 스토리지 구축:</strong><br>
+            Apache + PHP 기반 Roundcube 웹메일 환경 구축, MariaDB를 연동하여 메일 사용자 계정 및 웹메일 데이터베이스 관리
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong>• Nginx 리버스 프록시 및 HTTPS 보안 아키텍처:</strong><br>
+            백엔드 인프라 직접 노출을 방지하기 위해 Nginx 리버스 프록시를 적용하고, HTTPS 암호화 통신을 구현하여 전체 메일 웹 서비스 보안성 제고
+          </li>
+        </ul>
+      </div>
+
+      <!-- 하단 뒤로가기 버튼 -->
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="../index.html#projects" class="btn primary-btn"><i class="fas fa-th-list"></i> 전체 프로젝트 목록보기</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Choyoungjoo. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
