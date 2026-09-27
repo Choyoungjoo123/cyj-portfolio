@@ -378,28 +378,45 @@
             </a>
           </div>
         </div>
-<!-- Final Project 카드 -->
-<div class="project-card" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
-  <span class="project-tag" style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Final Capstone Project</span>
-  <h3 style="font-size: 1.5rem; color: #0f172a; margin-top: 10px; margin-bottom: 10px;">팝업스토어 중개 플랫폼 구축 및 하이브리드 K8s 인프라 고도화</h3>
-  
-  <p style="color: #475569; line-height: 1.7; margin-bottom: 15px;">
-    온프레미스 K8s와 AWS EKS를 연동한 하이브리드 인프라 설계 프로젝트입니다. 7R 마이그레이션 프레임워크를 수립하고, Route53 동적 가중치 라우팅과 이원화 VPN 네트워크(Site-to-Site & Tailscale)를 통해 트래픽 자동 분산 및 고가용성 관측 체계를 구축했습니다.
-  </p>
-
-  <div style="margin-bottom: 20px;">
-    <span class="tech-badge">AWS EKS / EC2</span>
-    <span class="tech-badge">Kubernetes (On-Prem)</span>
-    <span class="tech-badge">Terraform (IaC)</span>
-    <span class="tech-badge">Route53 & AWS Lambda</span>
-    <span class="tech-badge">Site-to-Site VPN / Tailscale</span>
-    <span class="tech-badge">Kafka & Redis</span>
-    <span class="tech-badge">MongoDB / PostgreSQL</span>
-    <span class="tech-badge">GitLab CI / ArgoCD</span>
+<!-- Final Capstone Project 카드 -->
+<div class="project-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+  <!-- 카테고리 / 팀 정보 -->
+  <div style="color: #2563eb; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px;">
+    FINAL CAPSTONE PROJECT (팀)
   </div>
 
-  <a href="projects/final_project.html" style="display: inline-block; background: #2563eb; color: #fff; padding: 10px 20px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-decoration: none;">
-    프로젝트 자세히 보기 <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+  <!-- 프로젝트 제목 -->
+  <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; line-height: 1.4; margin-bottom: 12px;">
+    팝업스토어 중개 플랫폼 구축 및 하이브리드 K8s 인프라 고도화
+  </h3>
+
+  <!-- 메타 정보 (역할 / 기간) -->
+  <div style="color: #64748b; font-size: 0.85rem; line-height: 1.6; margin-bottom: 12px;">
+    <div><i class="fas fa-user-shield"></i> 하이브리드 인프라 설계, VPN·Route53 라우팅, 모니터링 구축</div>
+    <div><i class="fas fa-calendar-alt"></i> 프로젝트 진행 기간</div>
+  </div>
+
+  <!-- 요약 설명 -->
+  <p style="color: #475569; font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+    온프레미스 K8s와 AWS EKS를 연동한 하이브리드 인프라 설계 프로젝트입니다. 7R 마이그레이션 프레임워크를 수립하고 Route53 동적 가중치 라우팅과 이원화 VPN 네트워크(Site-to-Site & Tailscale)를 통해 트래픽 자동 분산 및 고가용성 관측 체계를 구축했습니다.
+  </p>
+
+  <!-- 기술 스택 뱃지 -->
+  <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;">
+    <span style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Kubernetes</span>
+    <span style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">AWS EKS</span>
+    <span style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Terraform</span>
+    <span style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Route53</span>
+    <span style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">VPN</span>
+    <span style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">Kafka</span>
+    <span style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">MongoDB</span>
+    <span style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">PostgreSQL</span>
+    <span style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">ArgoCD</span>
+  </div>
+
+  <!-- 자세히 보기 버튼 (왼쪽 카드 규격 통일) -->
+  <a href="projects/final_project.html" style="display: block; width: 100%; text-align: center; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; padding: 10px 0; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease;">
+    자세히 보기 &rarr;
   </a>
 </div>
       </div>
