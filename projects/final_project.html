@@ -114,8 +114,8 @@
       <span class="project-tag" style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Final Capstone Project</span>
       <h1 style="font-size: 2.2rem; color: #0f172a; margin-top: 5px;">팝업스토어 중개 플랫폼 구축 및 하이브리드 K8s 인프라 고도화</h1>
       <div class="meta-info">
-        <span><i class="fas fa-user-shield"></i> <strong>역할:</strong> 팀장,하이브리드 인프라 설계/IaC, VPN·Route53 라우팅, 모니터링 구축, DB 설계</span>
-        <span><i class="fas fa-users"></i> 팀 프로젝트(5명)</span>
+        <span><i class="fas fa-user-shield"></i> <strong>역할:</strong> 팀장 / 하이브리드 인프라 설계·IaC, VPN·Route53 라우팅, 관측성(MELT) 구축, DB 설계</span>
+        <span><i class="fas fa-users"></i> 팀 프로젝트 (5명)</span>
       </div>
     </div>
   </section>
@@ -126,7 +126,7 @@
 
       <!-- 기술 스택 -->
       <div class="content-block">
-        <h3><i class="fas fa-tools"></i> 핵심 기술 스택 (Tech Stack)</h3>
+        <h3><i class="fas fa-tools"></i> 핵심 기술 스택 & 툴체인 (Tech Stack & Toolchain)</h3>
         <div>
           <span class="tech-badge">AWS EKS / EC2</span>
           <span class="tech-badge">Kubernetes (On-Premises)</span>
@@ -134,6 +134,7 @@
           <span class="tech-badge">Route53 / AWS Lambda</span>
           <span class="tech-badge">Site-to-Site VPN / strongSwan</span>
           <span class="tech-badge">Tailscale</span>
+          <span class="tech-badge">GitLab CI / ArgoCD</span>
           <span class="tech-badge">Apache Kafka</span>
           <span class="tech-badge">Redis Sentinel</span>
           <span class="tech-badge">MongoDB / PostgreSQL</span>
@@ -147,7 +148,7 @@
         <ul class="role-list">
           <li><strong>하이브리드 인프라 설계 및 IaC:</strong> AWS 및 온프레미스 연동 구조 설계 및 Terraform 기반 자원 자동화</li>
           <li><strong>하이브리드 VPN 연결망 구축:</strong> strongSwan(IPsec) 기반 AWS Site-to-Site VPN 및 Tailscale 메시 VPN 이원화 네트워크 구축</li>
-          <li><strong>AWS 관측성(MELT) 인프라 구축:</strong> Prometheus, Loki, Tempo, OpenTelemetry 스택 구축</li>
+          <li><strong>AWS 관측성(MELT) 인프라 구축:</strong> Prometheus, Loki, Tempo, OpenTelemetry 기반 통합 관측 체계 구축</li>
           <li><strong>Route53 기반 가중치 트래픽 자동 전환:</strong> Alertmanager + API Gateway + AWS Lambda 기반 동적 라우팅 파이프라인 설계 및 검증</li>
           <li><strong>커스텀 도메인 노출:</strong> Cloudflare Tunnel 및 Custom Hostname 적용으로 온프레미스-AWS 간 안전한 통신 노출</li>
           <li><strong>데이터 수집 및 데이터베이스 설계:</strong> PlayMCP/서울시 열린데이터 파이프라인 연동, MongoDB 및 PostgreSQL(RDB) 스키마 설계</li>
@@ -190,7 +191,7 @@
           </div>
           <div class="r7-card">
             <h4>(4) Repurchase (재구매)</h4>
-            <p style="font-size: 0.9rem; color: #475569; margin: 0;">CI/CD를 Jenkins → GitLab, 레지스트리를 Harbor → ECR로 전환.</p>
+            <p style="font-size: 0.9rem; color: #475569; margin: 0;">CI/CD를 Jenkins → GitLab, 레지스트리를 Harbor → ECR로 전환 및 형상 관리 고도화.</p>
           </div>
           <div class="r7-card">
             <h4>(5) Refactor (리팩토링)</h4>
@@ -264,16 +265,19 @@
         <img src="../images/char_nosql.png" alt="MongoDB NoSQL 데이터 구조" class="diagram-img">
       </div>
 
-      <!-- 4. CI/CD 파이프라인 -->
+      <!-- 4. CI/CD 파이프라인 및 브랜치 전략 -->
       <div class="content-block">
-        <h3><i class="fas fa-code-branch"></i> 4. CI/CD 파이프라인 및 브랜치 전략</h3>
+        <h3><i class="fas fa-code-branch"></i> 4. CI/CD 파이프라인 및 개발·배포 운용</h3>
 
-        <div class="sub-title">GitLab + ArgoCD 기반 AWS EKS GitOps 배포</div>
+        <div class="sub-title">GitLab CI + ArgoCD 기반 AWS EKS GitOps 배포 운용</div>
+        <p style="color: #334155; line-height: 1.8;">
+          프로젝트 인프라 및 애플리케이션의 지속적 배포를 위해 <strong>GitLab CI(이미지 빌드 및 ECR 푸시)</strong>와 <strong>ArgoCD(GitOps 기반 EKS 자동 동기화)</strong> 흐름을 활용하여 안정적인 배포 파이프라인을 경험하고 운영했습니다.
+        </p>
         <img src="../images/gitlab.png" alt="GitLab AWS 파이프라인" class="diagram-img">
 
         <div class="sub-title">Trunk-Based Development (TBD) 브랜치 전략</div>
         <p style="color: #334155; line-height: 1.8;">
-          단기 기능 브랜치를 통해 빠르게 지속적 통합(CI) 및 배포(CD) 속도를 보장하는 Trunk-Based 전략을 적용했습니다.
+          단기 기능 브랜치를 통해 빠르게 지속적 통합(CI) 및 배포(CD) 속도를 보장하는 Trunk-Based 전략을 팀 협업 규칙으로 적용했습니다.
         </p>
         <img src="../images/trunk.png" alt="Trunk-Based Development 브랜치 전략" class="diagram-img">
       </div>
