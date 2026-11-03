@@ -70,6 +70,41 @@
       border-left: 4px solid #2563eb;
       padding-left: 10px;
     }
+    .now-doing-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .now-doing-list li {
+      position: relative;
+      padding-left: 34px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: #334155;
+    }
+    .now-doing-list li::before {
+      content: '\f058';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: #2563eb;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 1.2rem;
+    }
+    .now-doing-list.future-list li::before {
+      content: '\f135';
+    }
+    .now-doing-list li strong {
+      display: block;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 2px;
+    }
   </style>
 </head>
 <body>
@@ -91,10 +126,10 @@
     <div class="container">
       <span class="company-badge">Work Experience</span>
       <h1 style="font-size: 2.2rem; color: #0f172a; margin-top: 5px;">에이프리카 (AIFRICA)</h1>
-      <p style="color: #475569; font-size: 1.1rem; margin-top: 8px;">DevOps / Cloud Infrastructure Engineer</p>
+      <p style="color: #475569; font-size: 1.1rem; margin-top: 8px;">AI Platform Infrastructure Engineer</p>
       <div class="meta-info">
         <span><i class="fas fa-building"></i> 에이프리카 (AIFRICA)</span>
-        <span><i class="fas fa-calendar-alt"></i> 2026.05 ~ 현재 재직 중</span>
+        <span><i class="fas fa-calendar-alt"></i> 2026.09 ~ 현재 재직 중</span>
         <span><i class="fas fa-map-marker-alt"></i> 서울</span>
       </div>
     </div>
@@ -109,6 +144,8 @@
         <h3><i class="fas fa-tools"></i> 사용 기술 및 실무 환경 (Tech Stack)</h3>
         <div>
           <span class="tech-badge">Kubernetes</span>
+          <span class="tech-badge">Ceph</span>
+          <span class="tech-badge">GPU (MIG)</span>
           <span class="tech-badge">Docker</span>
           <span class="tech-badge">Linux (Ubuntu/RHEL)</span>
           <span class="tech-badge">Prometheus</span>
@@ -122,19 +159,23 @@
       <div class="content-block">
         <h3><i class="fas fa-briefcase"></i> 주요 담당 업무 (Key Responsibilities)</h3>
         <p style="color: #475569; line-height: 1.7;">
-          AI 클라우드 플랫폼 인프라 운영 및 클러스터 관리, 모니터링/배포 파이프라인 유지보수를 담당하고 있습니다.
+          AI(LLMOps) 플랫폼을 Kubernetes·Ceph·GPU 위에 구축하고, 고객 환경에 설치·검증하는 인프라 엔지니어입니다.
         </p>
-        
-        <div class="sub-title">1. 클라우드 인프라 및 클러스터 운영</div>
-        <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #334155;">
-          <li style="margin-bottom: 8px;">• 쿠버네티스 클러스터 노드 상태 점검 및 리소스 최적화 관리</li>
-          <li style="margin-bottom: 8px;">• AI 플랫폼 서비스 가동성 및 고가용성(HA) 유지보수</li>
+
+        <div class="sub-title">지금 하고 있는 일</div>
+        <ul class="now-doing-list">
+          <li><strong>인프라 구축</strong>AI 플랫폼이 돌아가는 Kubernetes·GPU·Ceph 환경을 직접 설계하고 구축합니다.</li>
+          <li><strong>PoC 검증</strong>사업자 환경(온프레미스/클라우드)에서 플랫폼 및 솔루션 동작을 검증합니다.</li>
+          <li><strong>폐쇄망 설치</strong>인터넷이 없는 고객 환경에 오프라인으로 설치하는 절차를 만듭니다.</li>
+          <li><strong>현장 지원</strong>협력사 장비 환경에서 설치와 호환성을 확인합니다.</li>
+          <li><strong>문서화</strong>설치 매뉴얼과 트러블슈팅 사례를 정리합니다.</li>
         </ul>
 
-        <div class="sub-title">2. CI/CD 및 모니터링 체계 고도화</div>
-        <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #334155;">
-          <li style="margin-bottom: 8px;">• 배포 파이프라인 개선 및 자동화 스크립트 작성</li>
-          <li style="margin-bottom: 8px;">• Prometheus & Grafana 기반 실시간 지표 모니터링 및 알람 설정</li>
+        <div class="sub-title">앞으로 하고 싶은 일</div>
+        <ul class="now-doing-list future-list">
+          <li><strong>설치 자동화</strong>반복되는 설치·설정·기능 테스트를 shell script 등으로 자동화</li>
+          <li><strong>고객 대응 확장</strong>고객 기술지원과 제품 교육을 직접 진행</li>
+          <li><strong>GPU·LLM 인프라 심화</strong>모델 서빙(vLLM, Triton)과 GPU 자원 운영 최적화</li>
         </ul>
       </div>
 
@@ -142,11 +183,11 @@
       <div class="content-block">
         <h3><i class="fas fa-bug"></i> 실무 문제 해결 사례 (Troubleshooting & Achievements)</h3>
         
-        <div class="sub-title">[사례 1] 노드 리소스 병목 현상 개선 및 모니터링 강화</li></div>
+        <div class="sub-title">[사례 1] 실무 트러블슈팅 제목을 적어주세요</div>
         <p style="color: #334155; line-height: 1.8; margin-bottom: 10px;">
-          <strong>• 문제 상황 (Problem):</strong> 특정 인프라 영역에서 간헐적인 리소스 병목 및 응답 지연 발생<br>
-          <strong>• 해결 조치 (Action):</strong> 원인 분석 후 지표(Metrics) 세분화 설정 및 임계치 조정, 리소스 요청/제한 값 재설정<br>
-          <strong>• 결과 및 성과 (Result):</strong> 장애 감지 시간 단축 및 서비스 안정성 확보
+          <strong>• 문제 상황 (Problem):</strong> 내용을 입력해 주세요.<br>
+          <strong>• 해결 조치 (Action):</strong> 내용을 입력해 주세요.<br>
+          <strong>• 결과 및 성과 (Result):</strong> 내용을 입력해 주세요.
         </p>
 
         <div class="sub-title">[사례 2] 실무 트러블슈팅 제목을 적어주세요</div>
