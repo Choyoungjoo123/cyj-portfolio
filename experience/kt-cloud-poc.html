@@ -432,8 +432,8 @@
 
         <div class="stat-row">
           <div class="stat-box">
-            <div class="num">96건</div>
-            <div class="label">집계된 테스트케이스</div>
+            <div class="num">98건</div>
+            <div class="label">작성·수행한 테스트케이스</div>
           </div>
         </div>
       </div>
@@ -536,8 +536,8 @@
 
         <div class="stat-row">
           <div class="stat-box">
-            <div class="num">96 / 96</div>
-            <div class="label">테스트케이스 통과</div>
+            <div class="num">96 / 98</div>
+            <div class="label">테스트케이스 통과<br>(미통과 2건은 인프라 외 원인)</div>
           </div>
           <div class="stat-box">
             <div class="num">약 38초</div>
@@ -545,7 +545,7 @@
           </div>
           <div class="stat-box">
             <div class="num">2건</div>
-            <div class="label">주요 이슈</div>
+            <div class="label">주요 이슈 (제품 버그)</div>
           </div>
         </div>
 
@@ -564,7 +564,7 @@
           <table class="result-table">
             <thead><tr><th>항목</th><th>결과</th></tr></thead>
             <tbody>
-              <tr><td>기능 검증</td><td>테스트케이스 96건 전체 통과 (기능 기준)</td></tr>
+              <tr><td>기능 검증</td><td>테스트케이스 98건 중 96건 통과 (기능 기준)<span class="note">미통과 2건: Kubeflow 예약 실행(v2.8.16 미지원), Cheetah 제품 버그 1건 — 둘 다 인프라 구축과 무관</span></td></tr>
               <tr><td>GPU 할당</td><td>일반 GPU · MIG 할당 요청 모두 정상 처리<span class="note">테스트 환경 기준</span></td></tr>
               <tr><td>확장성</td><td>Multi Node 워크로드 실행, MIG 기반 GPU 분할 확인<span class="note">대규모 확장·분산 학습 성능은 범위 외</span></td></tr>
               <tr><td>운영 편의성</td><td>UI 기반 관리 기능 (로그 · 터미널 · 모니터링 통합)</td></tr>
@@ -574,6 +574,26 @@
             </tbody>
           </table>
         </div>
+
+        <div class="sub-title">주요 이슈 (제품 버그 2건)</div>
+        <div class="table-wrap">
+          <table class="result-table">
+            <thead><tr><th>이슈</th><th>현상 및 원인</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>커스텀 이미지 워크스페이스</td>
+                <td>커스텀 이미지로 워크스페이스가 생성되지 않음<span class="note">커스텀 이미지 생성 시 찍히는 Kubernetes 스냅샷과 Cheetah 스냅샷의 이름이 서로 달라 불일치 발생</span></td>
+              </tr>
+              <tr>
+                <td>자원 필터 UI</td>
+                <td>자원 선택 화면에서 "All"을 누르면 GPU·CPU 자원이 표시되지 않음<span class="note">UI 필터 동작 오류</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">
+          두 건 모두 원인을 확인한 뒤 제품(개발) 측 이슈로 분류했으며, 인프라 구축과 동작에는 영향이 없었습니다.
+        </p>
       </div>
 
       <!-- 한계 (솔직하게) -->
@@ -582,6 +602,7 @@
         <ul>
           <li>확인한 것은 기능 동작이며, HA 구성(마스터 1대)과 HTTPS, 대규모 분산 학습 성능은 이번 검증 범위 밖입니다.</li>
           <li>Kubeflow 예약 실행은 v2.8.16에 전용 배치가 없어 동작하지 않았고, 이 부분은 선임에게 문의 사항으로 넘겼습니다.</li>
+          <li>테스트케이스 98건 중 2건(Kubeflow 예약 실행, Cheetah 제품 버그)은 인프라 외 원인으로 통과하지 못해 결과 집계에서 따로 구분했습니다.</li>
           <li>Triton과 TensorRT-LLM은 배포 화면에서 지원 여부만 확인했으며, 실제로 검증을 완료한 서빙 엔진은 vLLM과 TEI입니다.</li>
         </ul>
       </div>
