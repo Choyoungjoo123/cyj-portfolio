@@ -180,6 +180,68 @@
       margin-left: 6px;
       vertical-align: middle;
     }
+    .diagram-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      display: block;
+      margin: 14px auto 6px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .diagram-caption {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    .result-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 460px;
+    }
+    .result-table th {
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 700;
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 2px solid #bfdbfe;
+    }
+    .result-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+      line-height: 1.6;
+      vertical-align: top;
+    }
+    .result-table td:first-child {
+      font-weight: 600;
+      color: #1e293b;
+      white-space: nowrap;
+    }
+    .result-table .num-col {
+      text-align: center;
+      color: #2563eb;
+      font-weight: 700;
+      width: 48px;
+    }
+    .result-table .note {
+      display: block;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
     .limit-block {
       background: #fffbeb;
       border-color: #fde68a;
@@ -271,22 +333,32 @@
       <!-- 구성한 인프라 -->
       <div class="content-block">
         <h3><i class="fas fa-server"></i> 구성한 인프라</h3>
+
+        <div class="sub-title" style="margin-top: 0;">전체 아키텍처 (External → Access → Platform → Infra)</div>
+        <img src="../images/kt-cloud-ppt1.png" alt="KT Cloud PoC 전체 아키텍처" class="diagram-img">
+        <p class="diagram-caption">컨설팅팀과 함께 설계한 PoC 전체 구성도</p>
+
+        <div class="sub-title">네트워크·접근 경로 설계도</div>
+        <img src="../images/kt-cloud-draw.png" alt="KT Cloud PoC 네트워크 및 접근 경로 설계도" class="diagram-img">
+        <p class="diagram-caption">직접 작성 (draw.io) · 공인 IP → KT 방화벽 → Static NAT → socat → MetalLB → Istio Ingress Gateway</p>
+
+        <div class="sub-title">노드 구성</div>
         <div class="spec-grid">
           <div class="spec-card">
-            <h4>서버 1</h4>
-            <p>64 vCPU / 256GB<br>Control Plane + 플랫폼 + Ceph</p>
+            <h4>서버 1 · Control Plane</h4>
+            <p>64 vCPU / 256GB<br>Control Plane + 플랫폼 + Rook-Ceph<br>디스크: OS 100GB, 1TB, 1TB × 2</p>
           </div>
           <div class="spec-card">
-            <h4>서버 2</h4>
-            <p>CPU 워커 노드</p>
+            <h4>서버 2 · CPU 워커</h4>
+            <p>24 vCPU<br>디스크: OS 100GB</p>
           </div>
           <div class="spec-card">
-            <h4>서버 3</h4>
-            <p>A100 40GB GPU 워커</p>
+            <h4>서버 3 · GPU 워커</h4>
+            <p>16 vCPU<br>A100 40GB × 1 (일반 GPU)</p>
           </div>
           <div class="spec-card">
-            <h4>서버 4</h4>
-            <p>A100 40GB GPU 워커</p>
+            <h4>서버 4 · GPU 워커 (MIG)</h4>
+            <p>16 vCPU<br>A100 40GB → MIG 1g.5gb × 7</p>
           </div>
         </div>
         <div class="stat-row">
@@ -306,7 +378,7 @@
 
         <div class="sub-title">기술 스택</div>
         <div>
-          <span class="tech-badge">Kubernetes 1.35</span>
+          <span class="tech-badge">Kubernetes 1.35.9</span>
           <span class="tech-badge">containerd 2.3</span>
           <span class="tech-badge">Cilium</span>
           <span class="tech-badge">Rook-Ceph (블록/파일/오브젝트)</span>
@@ -318,6 +390,7 @@
           <span class="tech-badge">Kubeflow</span>
           <span class="tech-badge">vLLM</span>
           <span class="tech-badge">TEI</span>
+          <span class="tech-badge">Harbor / HuggingFace 연동</span>
         </div>
       </div>
 
@@ -365,6 +438,59 @@
         </div>
       </div>
 
+      <!-- 검증 계획 -->
+      <div class="content-block">
+        <h3><i class="fas fa-clipboard-list"></i> 검증 계획</h3>
+
+        <div class="sub-title" style="margin-top: 0;">검증 시나리오</div>
+        <ul class="check-list">
+          <li>기존 서비스 구성을 유지한 상태로 PoC 환경 구성</li>
+          <li>워크로드 실행 → 모델 서빙 → 운영 관리까지 End-to-End 검증</li>
+          <li>성공 기준에 따라 결과와 증빙을 기록</li>
+        </ul>
+
+        <div class="two-col">
+          <div>
+            <div class="sub-title">사전 조건 (Pre-Condition)</div>
+            <div class="table-wrap">
+              <table class="result-table" style="min-width: 300px;">
+                <thead><tr><th>구분</th><th>내용</th></tr></thead>
+                <tbody>
+                  <tr><td>인프라</td><td>KT Cloud Zone(DX-G), VM 4대</td></tr>
+                  <tr><td>인프라</td><td>Private Network 172.25.20.0/24</td></tr>
+                  <tr><td>플랫폼</td><td>Kubernetes (Master / CPU Worker / GPU Worker × 2)</td></tr>
+                  <tr><td>플랫폼</td><td>Istio Ingress Gateway + MetalLB</td></tr>
+                  <tr><td>플랫폼</td><td>GPU 노드 2대 (A100 40GB) + GPU Operator</td></tr>
+                  <tr><td>서비스</td><td>Cheetah v2.8.16</td></tr>
+                  <tr><td>서비스</td><td>사내 Harbor 연동, API·워크로드 환경</td></tr>
+                  <tr><td>서비스</td><td>Rook-Ceph (블록/파일/오브젝트)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <div class="sub-title">성공 기준 (Pass Criteria)</div>
+            <div class="table-wrap">
+              <table class="result-table" style="min-width: 300px;">
+                <thead><tr><th class="num-col">#</th><th>기준</th></tr></thead>
+                <tbody>
+                  <tr><td class="num-col">1</td><td>공인 IP(Static NAT)로 들어온 외부 트래픽이 Ingress까지 정상 전달</td></tr>
+                  <tr><td class="num-col">2</td><td>Kubernetes 클러스터 정상 동작</td></tr>
+                  <tr><td class="num-col">3</td><td>Batch / Interactive 워크로드 정상 실행</td></tr>
+                  <tr><td class="num-col">4</td><td>GPU 자원(일반 GPU · MIG) 정상 할당 및 사용</td></tr>
+                  <tr><td class="num-col">5</td><td>NodePort 기반 서비스 접근 정상 동작</td></tr>
+                  <tr><td class="num-col">6</td><td>모델 서빙 후 API 요청·응답 정상 처리</td></tr>
+                  <tr><td class="num-col">7</td><td>Ceph 기반 데이터 마운트 및 워크로드 연동 정상 동작</td></tr>
+                  <tr><td class="num-col">8</td><td>검증 범위 내 End-to-End 서비스 흐름 정상 동작</td></tr>
+                  <tr><td class="num-col">9</td><td>마켓플레이스 상품화가 가능한 수준</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- 의사결정과 문제 해결 -->
       <div class="content-block" style="background: #f0f9ff; border-color: #bae6fd;">
         <h3 style="color: #0369a1;"><i class="fas fa-lightbulb"></i> 의사결정과 문제 해결 (강점)</h3>
@@ -375,13 +501,13 @@
         </div>
 
         <div class="decision-item">
-          <h4>② MetalLB 포기 → Static NAT + socat + Istio 구조로 재설계</h4>
-          <p>클라우드 환경이 미등록 IP를 차단해 MetalLB VIP로는 외부 접속이 되지 않는 문제를 발견하고, Static NAT와 socat 포워딩, Istio를 조합한 구조로 전환해 해결했습니다.</p>
+          <h4>② MetalLB VIP 직접 노출 불가 → Static NAT + socat 포워딩 경로 설계</h4>
+          <p>클라우드가 미등록 IP를 차단해 MetalLB VIP(172.25.20.175)로는 외부에서 접속할 수 없었습니다. 공인 IP를 Static NAT로 서버1(172.25.20.96)에 연결하고, 호스트의 socat(systemd 서비스)이 80·8000 포트를 MetalLB VIP로 넘겨 Istio Ingress Gateway까지 도달하는 경로를 설계해 해결했습니다.</p>
         </div>
 
         <div class="decision-item">
           <h4>③ 방화벽 최소 개방 원칙 적용</h4>
-          <p>전체 포트를 여는 대신 실제로 필요한 80, 8000, 30000~32767 포트만 선별적으로 개방했습니다.</p>
+          <p>전체 포트를 여는 대신 서비스에 필요한 80(웹), 8000(모델 API), 30000~32767(NodePort)만 인바운드로 열고, SSH(22)는 회사 IP에서만 접근하도록 제한했습니다.</p>
         </div>
 
         <div class="decision-item">
@@ -407,6 +533,47 @@
           <li>클라우드 환경에서 설치부터 모델 서빙, 외부 API 호출까지 End-to-End 동작을 확인했습니다.</li>
           <li>PoC 결과가 해당 클라우드 사업자의 마켓플레이스 상품 등록으로 이어졌습니다.</li>
         </ul>
+
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="num">96 / 96</div>
+            <div class="label">테스트케이스 통과</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">약 38초</div>
+            <div class="label">평균 Job 실행 시간</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">2건</div>
+            <div class="label">주요 이슈</div>
+          </div>
+        </div>
+
+        <div class="sub-title">항목별 검증 결과</div>
+        <ul class="verify-columns" style="list-style: none; padding: 0;">
+          <li>✔ Kubernetes 기반 GPU 클러스터 구성 및 운영</li>
+          <li>✔ Batch / Interactive / Multi Node 워크로드 실행</li>
+          <li>✔ vLLM / TEI 기반 모델 서빙</li>
+          <li>✔ OpenAI 호환 API 제공 및 외부 연동</li>
+          <li>✔ Harbor / Ceph / HuggingFace 연동</li>
+          <li>✔ 모니터링 / 로그 / 웹 터미널 등 운영 기능</li>
+        </ul>
+
+        <div class="sub-title">관점별 결과</div>
+        <div class="table-wrap">
+          <table class="result-table">
+            <thead><tr><th>항목</th><th>결과</th></tr></thead>
+            <tbody>
+              <tr><td>기능 검증</td><td>테스트케이스 96건 전체 통과 (기능 기준)</td></tr>
+              <tr><td>GPU 할당</td><td>일반 GPU · MIG 할당 요청 모두 정상 처리<span class="note">테스트 환경 기준</span></td></tr>
+              <tr><td>확장성</td><td>Multi Node 워크로드 실행, MIG 기반 GPU 분할 확인<span class="note">대규모 확장·분산 학습 성능은 범위 외</span></td></tr>
+              <tr><td>운영 편의성</td><td>UI 기반 관리 기능 (로그 · 터미널 · 모니터링 통합)</td></tr>
+              <tr><td>사용자 경험</td><td>워크스페이스 단위로 자원이 분리되어 명확함</td></tr>
+              <tr><td>자동화</td><td>Job / Serving 생성 자동화 지원 (모델 배포 시 VirtualService 자동 생성)</td></tr>
+              <tr><td>제약 사항</td><td>스케줄링 · 리소스 할당 정책의 영향을 받음</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <!-- 한계 (솔직하게) -->
