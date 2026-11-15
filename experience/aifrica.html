@@ -102,6 +102,87 @@
       font-size: 1.1rem;
       margin-bottom: 2px;
     }
+    .period-block {
+      margin-top: 22px;
+    }
+    .period-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      color: #1e293b;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .period-badge {
+      background: #2563eb;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .period-badge.regular {
+      background: #16a34a;
+    }
+    .period-date {
+      color: #64748b;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .case-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin-bottom: 12px;
+    }
+    .case-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .case-card-header h4 {
+      font-size: 1.05rem;
+      color: #0f172a;
+    }
+    .case-date {
+      font-size: 0.82rem;
+      color: #64748b;
+      white-space: nowrap;
+    }
+    .case-card p {
+      color: #475569;
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .case-link:hover {
+      text-decoration: underline;
+    }
+    .case-card-empty {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      text-align: center;
+      padding: 18px;
+    }
+    .case-card-empty p {
+      margin: 0;
+      color: #94a3b8;
+    }
   </style>
 </head>
 <body>
@@ -177,23 +258,41 @@
         </ul>
       </div>
 
-      <!-- 트러블슈팅 및 실무 문제 해결 -->
-      <div class="content-block">
-        <h3><i class="fas fa-bug"></i> 실무 문제 해결 사례 (Troubleshooting & Achievements)</h3>
-        
-        <div class="sub-title">[사례 1] 실무 트러블슈팅 제목을 적어주세요</div>
-        <p style="color: #334155; line-height: 1.8; margin-bottom: 10px;">
-          <strong>• 문제 상황 (Problem):</strong> 내용을 입력해 주세요.<br>
-          <strong>• 해결 조치 (Action):</strong> 내용을 입력해 주세요.<br>
-          <strong>• 결과 및 성과 (Result):</strong> 내용을 입력해 주세요.
+      <!-- 실무 경험 사례 -->
+      <div class="content-block" id="cases">
+        <h3><i class="fas fa-flag"></i> 실무 경험 사례 (Work Experience Cases)</h3>
+        <p style="color: #475569; line-height: 1.7;">
+          입사 이후 수행한 실무 사례를 시기별로 정리합니다. 수습 기간과 정규 전환 이후로 나누어 주요 사례를 계속 채워나갈 예정입니다.
         </p>
 
-        <div class="sub-title">[사례 2] 실무 트러블슈팅 제목을 적어주세요</div>
-        <p style="color: #334155; line-height: 1.8;">
-          <strong>• 문제 상황 (Problem):</strong> 내용을 입력해 주세요.<br>
-          <strong>• 해결 조치 (Action):</strong> 내용을 입력해 주세요.<br>
-          <strong>• 결과 및 성과 (Result):</strong> 내용을 입력해 주세요.
-        </p>
+        <!-- 수습기간 -->
+        <div class="period-block">
+          <div class="period-title">
+            <span class="period-badge">수습</span> 수습기간 <span class="period-date">[2026.09.28 ~ 2026.12.31]</span>
+          </div>
+
+          <div class="case-card">
+            <div class="case-card-header">
+              <h4>사례 1. KT Cloud 마켓플레이스 PoC</h4>
+              <span class="case-date">2026.10.14 ~ 10.27</span>
+            </div>
+            <p>
+              자사 AI 플랫폼(MLOps) 솔루션이 국내 클라우드 사업자 환경에서 동작하는지 검증하는 PoC를 단독으로 수행하고 결과를 보고했습니다. 이 결과가 해당 클라우드 마켓플레이스 상품 등록으로 이어졌습니다.
+            </p>
+            <a href="kt-cloud-poc.html" class="case-link">자세히 보기 <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- 정규직 전환 이후 -->
+        <div class="period-block">
+          <div class="period-title">
+            <span class="period-badge regular">정규직</span> 사원 <span class="period-date">[2027.01.01 ~ 진행중]</span>
+          </div>
+
+          <div class="case-card case-card-empty">
+            <p>정규 전환 이후 사례는 수행하는 대로 업데이트할 예정입니다.</p>
+          </div>
+        </div>
       </div>
 
       <!-- 배운 점 및 핵심 역량 -->
